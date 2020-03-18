@@ -14,8 +14,30 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.contrib.auth import views as auth_views
+from django.urls import include, path
+from restapi import views
+""" for routers api root"""
+from restapi.models import Data, Node
+from rest_framework import routers
+from restapi.views import DataViewSet, NodeViewSet
+
+router = routers.DefaultRouter()
+
+router.register(r'data', DataViewSet)
+
+router.register(r'node', NodeViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('sensors/', include('sensors.urls')),
+    path('register/', include('register.urls')),
+    path('nodes/', include('nodes.urls')),
+    path('mainpage/', include('mainpage.urls')),
+    path('', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='login.html'), name='logout'),
+    path(r'api/', include(router.urls)),
+    path(r'', include('rest_framework.urls', namespace='rest_framework')),
+    
 ]

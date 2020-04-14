@@ -10,18 +10,23 @@
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
           </div>
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <p>Data yang bisa anda lihat pada web ini :</p>
+          </div>
 
           <!-- Content Row (Bagi jadi dua row)-->
           <div class="row">
+          
 
             <!-- Monitor Kelembaban (kiri)-->
             <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
+              <div class="card border-left-warning shadow h-100 py-2">
                 <a href="#">
                   <div class="card-body">
                     <div class="row no-gutters align-items-center">
                       <div class="col mr-2">
-                        <div class="font-weight-bold text-primary text-uppercase">Kelembaban Tanah</div>
+                        <div class="font-weight-bold text-warning text-uppercase">Kelembaban Tanah</div>
+                        <p>Mengukur tingkat kelembaban tanah dengan Soil Moisture sensor</p>
                       </div>
                     </div>
                   </div>
@@ -29,14 +34,15 @@
               </div>
             </div>
 
-            <!-- Monitor Tegangan -->
+            <!-- Monitor Pergeseran -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-success shadow h-100 py-2">
                   <a href="#">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="font-weight-bold text-success text-uppercase mb-1">Baterai</div>
+                      <div class="font-weight-bold text-success text-uppercase mb-1">Pergeseran Tanah</div>
+                      <p>Mengukur panjang pergeseran tanah dengan Displacement sensor</p>
                     </div>
                   </div>
                 </div>
@@ -51,7 +57,8 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="font-weight-bold text-info text-uppercase mb-1">Kemiringan</div>
+                      <div class="font-weight-bold text-info text-uppercase mb-1">Kemiringan Tanah</div>
+                      <p>Mengukur besar sudut kemiringan tanah dengan Gyroscope sensor yang memiliki 3 sumbu</p>
                     </div>
                   </div>
                 </div>
@@ -66,7 +73,8 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="font-weight-bold text-warning text-uppercase mb-1">Getaran</div>
+                      <div class="font-weight-bold text-warning text-uppercase mb-1">Getaran Tanah</div>
+                      <p>Mengukur besar getaran yang terjadi pada tanah dengan Vibration sensor</p>
                     </div>
                   </div>
                 </div>
@@ -74,14 +82,15 @@
               </div>
             </div>
 
-            <!-- Monitor box suhu -->
+            <!-- Monitor accelero -->
             <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
+              <div class="card border-left-success shadow h-100 py-2">
                   <a href="#">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="font-weight-bold text-warning text-uppercase mb-1">Suhu Box</div>
+                      <div class="font-weight-bold text-primary text-uppercase mb-1">Percepatan Gerak Tanah</div>
+                      <p>Mengukur besar pergeseran tanah dengan Accelerometer Sensor yang memiliki 3 sumbu</p>
                     </div>
                   </div>
                 </div>
@@ -89,20 +98,21 @@
               </div>
             </div>   
             
-            <!-- Monitor Kelembaban Box -->
+            <!-- Monitor letak node -->
             <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
+              <div class="card border-left-info shadow h-100 py-2">
                   <a href="#">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="font-weight-bold text-warning text-uppercase mb-1">Kelembaban Box</div>
+                      <div class="font-weight-bold text-success text-uppercase mb-1">Lokasi Node</div>
+                      <p>Mengetahui lokasi node pada peta dengan memanfaatkan GPS sensor</p>
                     </div>
                   </div>
                 </div>
                   </a>
               </div>
-            </div>     
+            </div>
             
           </div>
           <!-- end of content row cards-->

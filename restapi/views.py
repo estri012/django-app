@@ -18,6 +18,11 @@ class DataViewSet(viewsets.ModelViewSet):
         filterset_fields = ['node_id']
 
 
+class MapViewSet(viewsets.ModelViewSet):
+        queryset = Data.objects.filter(node_id=1).order_by('-id')[:1]
+        serializer_class = DataSerializer
+
+
 class NodeViewSet(viewsets.ModelViewSet):
     queryset = Node.objects.all()
     serializer_class = NodeSerializer

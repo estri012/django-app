@@ -100,7 +100,7 @@ DATABASES = {
         'NAME': 'capstone3',
         'USER': 'postgres',
         'PASSWORD': '10tujuh1',
-        'HOST': '127.0.0.1',
+        'HOST': 'postgres',
         'PORT': '5432',
     }
 }

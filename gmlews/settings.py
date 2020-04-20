@@ -96,7 +96,7 @@ WSGI_APPLICATION = 'gmlews.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'capstone3',
         'USER': 'postgres',
         'PASSWORD': '10tujuh1',

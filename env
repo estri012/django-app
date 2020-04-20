@@ -1,0 +1,5 @@
+DB_NAME=capstone3
+DB_USER=postgres
+DB_PASS=10tujuh1
+DB_SERVICE=postgres
+DB_PORT=5432

@@ -24,11 +24,11 @@ from restapi.views import DataViewSet, NodeViewSet, MapViewSet
 
 router = routers.DefaultRouter()
 
-router.register(r'data', DataViewSet)
+router.register(r'data', DataViewSet, 'data')
 
-router.register(r'node', NodeViewSet)
+router.register(r'node', NodeViewSet, 'node')
 
-router.register(r'map', MapViewSet)
+router.register(r'map', MapViewSet, 'map')
 
 
 urlpatterns = [

@@ -24,8 +24,10 @@ class MapViewSet(viewsets.ModelViewSet):
 
 
 class NodeViewSet(viewsets.ModelViewSet):
-    queryset = Node.objects.all()
-    serializer_class = NodeSerializer
+        queryset = Node.objects.all()
+        serializer_class = NodeSerializer
+        filter_backends = [DjangoFilterBackend]
+        filterset_fields = ['node_id']
 
 
 

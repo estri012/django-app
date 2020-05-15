@@ -19,7 +19,7 @@ class Data(models.Model):
 
 
 class Node(models.Model):
-    node_id = models.IntegerField()
+    node_id = models.IntegerField(primary_key=True)
 
 
 

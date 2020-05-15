@@ -2,8 +2,9 @@ from django.urls import path
 from . import views
 from restapi import views
 from restapi.models import Data, Node
-from nodes.views import Map
+from nodes.views import NodeList, AddNode
 
 urlpatterns = [
-    path('node-1/', Map.as_view(), name='node1'),
+    path('nodelist/', NodeList.as_view(), name='nodelist'),
+    path('addnode/', AddNode.as_view(), name='addnode'),
 ]

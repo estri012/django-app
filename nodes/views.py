@@ -10,6 +10,10 @@ from django.http import HttpResponse
 from rest_framework.views import APIView
 
 # Create your views here.
-class Map(View):
+class NodeList(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'node1.html')
+        return render(request, 'nodelist.html')
+
+class AddNode(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'addnode.html')

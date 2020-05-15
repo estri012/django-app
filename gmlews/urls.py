@@ -37,7 +37,6 @@ urlpatterns = [
     path('register/', include('register.urls')),
     path('nodes/', include('nodes.urls')),
     path('mainpage/', include('mainpage.urls')),
-    path('addnode/', include('addnode.urls')),
     path('', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='login.html'), name='logout'),
     path(r'api/', include(router.urls)),

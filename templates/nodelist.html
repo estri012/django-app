@@ -66,7 +66,7 @@
     <!--JQUERY-->
     <script>
         $(document).ready(function() {
-            $.getJSON("http://127.0.0.1:8000/api/node/", function(data){
+            $.getJSON("/api/node/", function(data){
                 var node_data = '';
                 $.each(data, function(key, value){
                     node_data += '<tr>';

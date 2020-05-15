@@ -15,20 +15,15 @@
         <div class="container-fluid">
 
       <form id="form_id" method="POST" action="https://gmlews.com/api/node/">
-         <h1>Add Node</h1>
+         <h1 style="font-weight: bold;">Add New Node</h1>
          <h4>Node ID*</h4>
-         <div class="node_id">
-            <input type="text" name="node_id" placeholder="node id" id="node_id" required />
-         </div>
-         <h1>Get the latitude and longitude of the node</h1>
-         <div class="latitude">
-           <label for="latitude">Latitude* :</label>
-           <input type="text" name="latitude" placeholder="Latitude °" id="latitude" />
-        </div>
-        <div class="longitude">
-           <label for="longitude">Longitude* :</label>
-           <input type="text" name="longitude" placeholder="Longitude°" id="longitude" />
-        </div>
+         <label for="node_id">Node Id</label></br>
+            <input type="text" name="node_id" placeholder="node id" id="node_id" style="width: 10%;" required />
+         <label style="font-weight: bold;">Get the latitude and longitude of the node</label></br>
+           <label for="latitude">Latitude* :</label></br>
+           <input type="text" name="latitude" placeholder="Latitude °" id="latitude" style="width: 40%;"/></br>
+           <label for="longitude">Longitude* :</label></br>
+           <input type="text" name="longitude" placeholder="Longitude°" id="longitude" style="width: 40%;" /></br>
         <style>     /*map code*/
           #node1Map {
           height: 350px; }

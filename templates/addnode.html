@@ -29,6 +29,10 @@
               <label for="longitude">Longitude* :</label>
               <input type="text" name="longitude" placeholder="Longitude°" id="longitude" />
            </div>
+           <style>     /*map code*/
+            #node1Map {
+            height: 350px; }
+          </style>
            <div id="node1Map"></div>
            <h4>Location Address</h4>
            <input type="text" id="location" name="location" />       
@@ -38,6 +42,8 @@
          </form>
 
 <!--JQUERY DATA-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <script>
 const map = L.map('node1Map').setView([-7.286190082778849, 109.52270507812501], 8);
 const attribution ='&copy: <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';

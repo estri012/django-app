@@ -22,7 +22,7 @@ class AddNode(View):
 
 def nodesensors(request, node_node_id):
     try:
-        node = Node.ojects.get(pk=node_node_id)
+        node = Node.objects.get(pk=node_node_id)
     except Node.DoesNotExist:
         raise Http404("Node does not exist")
     return render(request, 'nodesensors.html', {'node': node})

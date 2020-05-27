@@ -16,8 +16,10 @@
 
       <form id="form_id" method="POST" action="https://gmlews.com/api/node/">
          <h1 style="font-weight: bold;">Add New Node</h1></br>
-         <label for="node_id">Node Id:</label></br>
+         <label for="node_id">Node Id*:</label></br>
             <input type="text" name="node_id" placeholder="node id" id="node_id" style="width: 10%;" required /></br></br>
+          <label for="name">Node Name*:</label></br>
+            <input type="text" name="name" placeholder="node name" id="name" style="width: 20%;" required /></br></br>
          <label style="font-weight: bold;">Get the latitude and longitude of the node</label></br>
            <label for="latitude">Latitude* :</label></br>
            <input type="text" name="latitude" placeholder="Latitude °" id="latitude" style="width: 40%;"/></br>
@@ -28,10 +30,12 @@
           height: 350px; }
         </style>
         <div id="node1Map"></div></br>
-        <label for="location">Location Address*</label></br>
-        <input type="text" id="location" name="location" style="width: 100%;" />       
+        <label for="location">Location*</label></br>
+        <input type="text" id="location" name="location" style="width: 100%;" /></br>
+        <label for="address">Address*</label></br>
+        <input type="text" id="address" name="address" style="width: 100%;" />       
         <div class="btn-block">
-          <button type="submit" href="/">Submit</button>
+          <button type="submit" href="/">Create</button>
         </div>
       </form>
 
@@ -59,6 +63,21 @@
     document.getElementById('location').value = address;
     });
   });
+
+  //generate last node_id
+  const api_url = 'https://gmlews.com/api/node/'
+            var last_id=[];
+            async function getData(){
+                const response = await fetch(api_url);
+                const data = await response.json();
+                last_id.push(data[data.length-1].node_id)
+                console.log(last_id);
+                var get_id=last_id++;
+                console.log(last_id);
+                document.getElementById('node_id').value = last_id;
+            }         
+            getData();
+
   
   </script>
 

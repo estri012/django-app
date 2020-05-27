@@ -20,15 +20,13 @@ from restapi import views
 """ for routers api root"""
 from restapi.models import Data, Node
 from rest_framework import routers
-from restapi.views import DataViewSet, NodeViewSet, MapViewSet
+from restapi.views import DataViewSet, NodeViewSet
 
 router = routers.DefaultRouter()
 
 router.register(r'data', DataViewSet, 'data')
 
 router.register(r'node', NodeViewSet, 'node')
-
-router.register(r'map', MapViewSet, 'map')
 
 
 urlpatterns = [

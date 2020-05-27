@@ -7,4 +7,5 @@ from nodes.views import NodeList, AddNode
 urlpatterns = [
     path('nodelist/', NodeList.as_view(), name='nodelist'),
     path('addnode/', AddNode.as_view(), name='addnode'),
+    path('chart/<int:node_node_id>/', views.nodesensors, name='nodesensors'),
 ]

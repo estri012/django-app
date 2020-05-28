@@ -18,6 +18,7 @@ from django.contrib.auth import views as auth_views
 from django.urls import include, path
 from restapi import views
 from nodes import views
+from sensors import views
 """ for routers api root"""
 from restapi.models import Data, Node
 from rest_framework import routers

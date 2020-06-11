@@ -63,3 +63,8 @@ def displacement(request):
     context = {'sensor_list': sensor_list}
     return render(request, 'displacement.html', context)
 
+def angular(request):
+    sensor_list = Node.objects.order_by('node_id')
+    context = {'sensor_list': sensor_list}
+    return render(request, 'angular.html', context)
+

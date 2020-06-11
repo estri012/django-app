@@ -97,6 +97,15 @@
     </canvas>
     <div class="col-sm-1"></div>
     </div>
+<!--angular chart-->
+</br></br></br>
+<div class="row"> 
+  <h5 style="font-weight: bold;">Angular Chart</h5>
+  <div class="col-sm-1"></div>
+    <canvas id="angularChart" width="600" height="300">
+    </canvas>
+    <div class="col-sm-1"></div>
+    </div>
     
 
   </div>
@@ -800,6 +809,78 @@ $.ajax({
                       scaleLabel: {
                       display:     true,
                       labelString: 'displacement (cm)'
+                  }
+                }],
+                xAxes: [{
+                 
+                        display: true,
+                        type: "time",
+                        time: {
+                              min: moment(startDate).toDate(),//Date object type
+                              max: moment(endDate).toDate()//Date object type
+                        },
+                      scaleLabel: {
+                      display:     true,
+                      labelString: 'Time (hour)'
+                  }
+                }]
+            }
+        }
+    });
+  },
+  error: function(error_data){
+    console.log(error_data)
+  } 
+
+});
+
+//angular chart
+$.ajax({
+  method: "GET",
+  url: endpoint,
+  data: {
+    startDate: startDate,
+    endDate: endDate
+  },
+  success: function(data){
+    //get data by fields
+    var angular = [], timestamp = [];
+    for (var i=0; i<data.length; i++){
+      angular.push(data[i].angular);
+      timestamp.push(data[i].timestamp);
+   }
+  //plot the chart
+    var ctx = document.getElementById("angularChart").getContext('2d');
+    var angularChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: timestamp,
+            datasets: [{
+                label: 'angular (degree)',
+                data: angular,
+                backgroundColor: [
+                    '#ff000000'
+                ],
+                borderColor: [
+                '#331698'
+                ],
+                pointBackgroundColor: '#331698',
+                borderCapStyle: 'round',
+                borderWidth: 3
+            }]
+        },
+        options: {
+            reponsive: true,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        min:-90,
+                        max:90,
+                        stepSize:10
+                    },
+                      scaleLabel: {
+                      display:     true,
+                      labelString: 'angular (degree)'
                   }
                 }],
                 xAxes: [{

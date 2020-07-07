@@ -9,8 +9,28 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script> -->
 
 
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
+  <!-- Begin Page Content -->
+<div class="container-fluid">
+  <!--Dropdown node-->
+  <div>Choose Node Device</div>
+  <select id="nodelist" onchange="location=this.value;">
+    <option class="nav-link collapse" value="">{{node.name}}</option>
+  </select> <br><br>  
+<script>
+  $(document).ready(function() {
+    $.getJSON("https://gmlews.com/api/node/", function(data){
+      var node_id = [], name = []
+      for(var i=0; i<data.length; i++){
+        node_id.push(data[i].node_id);
+        name.push(data[i].name);
+
+        $("#nodelist").append("<option value='/chart/"+node_id[i]+"'>"+name[i]+"</option>");
+      }
+      console.log(name);
+    });
+  })
+</script>
+<!--end dropdown node-->
 <h2>Node Id : {{ node.node_id }}, Node Name : {{ node.name }}</h2>
   <ol class="breadcrumb">choose data from date : <input style="width: 30%;" type="text" name="datefilter" value="" /></ol>
 <p>Choose the date then Click this button to download data from {{ node.name }}</p>

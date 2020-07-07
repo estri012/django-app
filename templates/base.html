@@ -106,7 +106,7 @@ $.getJSON("https://gmlews.com/api/node/", function(data){
     node_id.push(data[i].node_id);
     name.push(data[i].name);
 
-    $("#archivelist").append("<option value='/chart/"+node_id[i]+"'>"+name[i]+"</option>");
+    $("#archivelist").append("<option value='/nodes/chart/"+node_id[i]+"'>"+name[i]+"</option>");
   }
   console.log(name);
 });

@@ -87,7 +87,7 @@
         data: {
             labels: timestamp,
             datasets: [{
-                label: 'accelero-x (mV/g)',
+                label: 'accelero-x (m/s^2)',
                 data: accelero_x,
                 backgroundColor: [
                     '#ff000000'
@@ -106,11 +106,11 @@
                 yAxes: [{
                     ticks: {
                         beginAtZero:false,
-                        stepSize:0.1
+                        stepSize:50
                     },
                       scaleLabel: {
                       display:     true,
-                      labelString: 'accelero-x (mV/g)'
+                      labelString: 'accelero-x (m/s^2)'
                   }
                 }],
                 xAxes: [{

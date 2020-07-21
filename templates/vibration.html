@@ -87,7 +87,7 @@
         data: {
             labels: timestamp,
             datasets: [{
-                label: 'vibration',
+                label: 'vibration (%)',
                 data: vibration,
                 backgroundColor: [
                     '#ff000000'
@@ -105,12 +105,13 @@
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero:false,
-                        stepSize:5
+                        beginAtZero:true,
+                        max:100,
+                        stepSize:10
                     },
                       scaleLabel: {
                       display:     true,
-                      labelString: 'vibration'
+                      labelString: 'vibration (%)'
                   }
                 }],
                 xAxes: [{

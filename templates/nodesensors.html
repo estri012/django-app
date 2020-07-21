@@ -237,7 +237,7 @@ $(function() {
         data: {
             labels: timestamp,
             datasets: [{
-                label: 'accelero-x (mV/g)',
+                label: 'accelero-x (m/s^2)',
                 data: accelero_x,
                 backgroundColor: [
                     '#ff000000'
@@ -256,11 +256,11 @@ $(function() {
                 yAxes: [{
                     ticks: {
                         beginAtZero:false,
-                        stepSize:0.1
+                        stepSize:5
                     },
                       scaleLabel: {
                       display:     true,
-                      labelString: 'accelero-x (mV/g)'
+                      labelString: 'accelero-x (m/s^2)'
                   }
                 }],
                 xAxes: [{
@@ -308,7 +308,7 @@ $.ajax({
         data: {
             labels: timestamp,
             datasets: [{
-                label: 'accelero-y (mV/g)',
+                label: 'accelero-y (m/s^2)',
                 data: accelero_y,
                 backgroundColor: [
                     '#ff000000'
@@ -327,11 +327,11 @@ $.ajax({
                 yAxes: [{
                     ticks: {
                         beginAtZero:false,
-                        stepSize:0.1
+                        stepSize:5
                     },
                       scaleLabel: {
                       display:     true,
-                      labelString: 'accelero-y (mV/g)'
+                      labelString: 'accelero-y (m/s^2)'
                   }
                 }],
                 xAxes: [{
@@ -379,7 +379,7 @@ $.ajax({
         data: {
             labels: timestamp,
             datasets: [{
-                label: 'accelero-z (mV/g)',
+                label: 'accelero-z (m/s^2)',
                 data: accelero_z,
                 backgroundColor: [
                     '#ff000000'
@@ -398,11 +398,11 @@ $.ajax({
                 yAxes: [{
                     ticks: {
                         beginAtZero:false,
-                        stepSize:0.1
+                        stepSize:5
                     },
                       scaleLabel: {
                       display:     true,
-                      labelString: 'accelero-z (mV/g)'
+                      labelString: 'accelero-z (m/s^2)'
                   }
                 }],
                 xAxes: [{
@@ -469,7 +469,7 @@ $.ajax({
                 yAxes: [{
                     ticks: {
                         beginAtZero:false,
-                        stepSize:0.1
+                        stepSize:50
                     },
                       scaleLabel: {
                       display:     true,
@@ -540,7 +540,7 @@ $.ajax({
                 yAxes: [{
                     ticks: {
                         beginAtZero:false,
-                        stepSize:0.1
+                        stepSize:50
                     },
                       scaleLabel: {
                       display:     true,
@@ -611,7 +611,7 @@ $.ajax({
                 yAxes: [{
                     ticks: {
                         beginAtZero:false,
-                        stepSize:0.1
+                        stepSize:50
                     },
                       scaleLabel: {
                       display:     true,
@@ -682,6 +682,7 @@ $.ajax({
                 yAxes: [{
                     ticks: {
                         beginAtZero:true,
+                        max:100,
                         stepSize:10
                     },
                       scaleLabel: {
@@ -734,7 +735,7 @@ $.ajax({
         data: {
             labels: timestamp,
             datasets: [{
-                label: 'vibration',
+                label: 'vibration (%)',
                 data: vibration,
                 backgroundColor: [
                     '#ff000000'
@@ -752,11 +753,13 @@ $.ajax({
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero:false,
+                        beginAtZero:true,
+                        max:100,
+                        stepSize:10
                     },
                       scaleLabel: {
                       display:     true,
-                      labelString: 'vibration'
+                      labelString: 'vibration (%)'
                   }
                 }],
                 xAxes: [{
@@ -823,7 +826,7 @@ $.ajax({
                 yAxes: [{
                     ticks: {
                         beginAtZero:true,
-                        stepSize:1
+                        stepSize:20
                     },
                       scaleLabel: {
                       display:     true,
@@ -893,9 +896,8 @@ $.ajax({
             scales: {
                 yAxes: [{
                     ticks: {
-                        min:-90,
-                        max:90,
-                        stepSize:10
+                        beginAtZero:false,
+                        stepSize:50
                     },
                       scaleLabel: {
                       display:     true,

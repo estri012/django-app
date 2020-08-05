@@ -18,7 +18,7 @@ class Data(models.Model):
     displacement = models.IntegerField()
     angular = models.FloatField()
     class Meta:
-        ordering = ["id"]
+        ordering = ["timestamp"]
 
 
 class Node(models.Model):
